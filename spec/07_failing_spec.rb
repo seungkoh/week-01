@@ -14,7 +14,7 @@ describe "Failing Examples" do
     context "when adding" do
     
       it "should be equal to the sum" do
-        first = second = 1
+        first = second = 1.5
         sum = first + second
       
         (first + second).should eq 3
@@ -27,13 +27,13 @@ describe "Failing Examples" do
       
       it "should be equal to the dividend" do
 
-        (12 / 3).shoud eq 3
+        (9 / 3).should eq 3
         
       end
       
       it "should be equal to the the remainder" do
         
-        (100 % 3).should eq 33
+        (33 % 100).should eq 33
         
       end
       
@@ -42,7 +42,7 @@ describe "Failing Examples" do
         # For this one see if you can leave the math operation (4 / 3) alone and
         # change the expectation
         
-        (4 / 3).should eq 1.3
+        (4 / 3).should eq 1
         
       end
       
@@ -55,7 +55,7 @@ describe "Failing Examples" do
         numerator = 4.0
         divisor = 3
         
-        (numerator / divisor).should eq 1
+        (numerator / divisor).should eq 4.0 / 3
         
       end
       
@@ -67,19 +67,19 @@ describe "Failing Examples" do
     it "should insert the value into the string" do
       
       name = "Old Gregg"
-      'My name is #{name}'.should eq 'My name is Old Gregg'
+      "My name is #{name}".should eq 'My name is Old Gregg'
       
     end
     
     it "should perform calculations within the area escaped within the String" do
       
-      "#{1 + 1}".should eq '1 + 1'
+      "1 + 1".should eq '1 + 1'
       
     end
     
     it "should be equal to each other" do
       
-      "\nDo you like Bailey's".should eq '\nDo you like Bailey\'s'
+      "\\nDo you like Bailey's".should eq '\nDo you like Bailey\'s'
       
     end
     
@@ -95,7 +95,7 @@ describe "Failing Examples" do
         # artist to make it meet the expectations "george_michael"
         
         artist = :george_michael
-        artist.should == "george_michael"
+        artist.to_s.should == "george_michael"
       end
       
     end
@@ -105,7 +105,7 @@ describe "Failing Examples" do
   describe "Boolean" do
     
     it "true should be true" do
-      true.should eq "true"
+      true.to_s.should eq "true"
     end
     
   end
@@ -116,7 +116,7 @@ describe "Failing Examples" do
       
       # Here you may have to do some set up work to make the below statement stop
       # raising the exception 'undefined local variable or method `value`'
-      
+      value = nil
       value.should be_nil
       
     end
